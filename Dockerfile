@@ -1,4 +1,10 @@
-FROM ubuntu:20.04
+FROM harshhaareddy/mega-sdk-python:latest
+
+WORKDIR /usr/src/app
+RUN chmod 777 /usr/src/app
+
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY extract /usr/local/bin
 COPY pextract /usr/local/bin
